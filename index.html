@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roll N' Go — Parrilla de Contenido Pre-Apertura</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --rng-black: #0A0A0A;
+  --rng-red: #8B1A1A;
+  --rng-red-light: #B22222;
+  --rng-red-accent: #DC3545;
+  --rng-cream: #F5F0EB;
+  --rng-white: #FFFFFF;
+  --rng-gray-100: #F8F7F6;
+  --rng-gray-200: #EDECEA;
+  --rng-gray-300: #D4D2CF;
+  --rng-gray-500: #8A8784;
+  --rng-gray-700: #4A4845;
+  --rng-gold: #C9A96E;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--rng-cream);
+  color: var(--rng-gray-700);
+  line-height: 1.6;
+}
+
+/* HERO */
+.hero {
+  background: var(--rng-black);
+  color: var(--rng-white);
+  padding: 80px 60px 60px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(139,26,26,0.3) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: -80px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(139,26,26,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--rng-red-accent);
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.05;
+  margin-bottom: 16px;
+  max-width: 700px;
+}
+.hero h1 span {
+  color: var(--rng-red-accent);
+}
+.hero-sub {
+  font-size: 18px;
+  color: var(--rng-gray-300);
+  max-width: 600px;
+  margin-bottom: 40px;
+}
+.hero-meta {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.hero-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.hero-meta-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--rng-gray-500);
+}
+.hero-meta-value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--rng-white);
+}
+
+/* STRATEGY SECTION */
+.strategy-section {
+  padding: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--rng-red);
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--rng-black);
+  margin-bottom: 24px;
+}
+.strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.strategy-card {
+  background: var(--rng-white);
+  border-radius: 16px;
+  padding: 32px;
+  border: 1px solid var(--rng-gray-200);
+  transition: transform 0.2s;
+}
+.strategy-card:hover { transform: translateY(-2px); }
+.strategy-card-phase {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--rng-red);
+  margin-bottom: 8px;
+}
+.strategy-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--rng-black);
+  margin-bottom: 8px;
+}
+.strategy-card-dates {
+  font-size: 13px;
+  color: var(--rng-gray-500);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+.strategy-card p {
+  font-size: 14px;
+  color: var(--rng-gray-700);
+  line-height: 1.7;
+}
+
+/* PILLAR TAGS */
+.pillar-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+.pillar-misterio { background: #1a1a2e; color: #e0d6ff; }
+.pillar-producto { background: #8B1A1A; color: #ffd6d6; }
+.pillar-marca { background: #2d4a3e; color: #d6ffe8; }
+.pillar-comunidad { background: #4a3b2d; color: #ffe8c9; }
+.pillar-educacion { background: #2d3a4a; color: #c9e0ff; }
+
+/* WEEK SECTIONS */
+.week-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px 48px;
+}
+.week-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--rng-black);
+}
+.week-number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--rng-black);
+  line-height: 1;
+}
+.week-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.week-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--rng-black);
+}
+.week-dates {
+  font-size: 13px;
+  color: var(--rng-gray-500);
+}
+
+/* POST CARDS */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.post-card {
+  background: var(--rng-white);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--rng-gray-200);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.post-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+.post-card-header {
+  padding: 20px 24px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.post-date {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--rng-black);
+}
+.post-format {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 100px;
+  background: var(--rng-gray-100);
+  color: var(--rng-gray-700);
+}
+.post-format.reel { background: #fce4ec; color: #c62828; }
+.post-format.carrusel { background: #e3f2fd; color: #1565c0; }
+.post-format.story { background: #f3e5f5; color: #7b1fa2; }
+.post-format.estatica { background: #e8f5e9; color: #2e7d32; }
+.post-format.video { background: #fff3e0; color: #e65100; }
+
+.post-card-body {
+  padding: 0 24px 20px;
+}
+.post-objective {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--rng-red);
+  margin-bottom: 8px;
+}
+.post-concept {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--rng-black);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.copy-block {
+  margin-bottom: 16px;
+}
+.copy-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--rng-gray-500);
+  margin-bottom: 6px;
+}
+.copy-text {
+  font-size: 13px;
+  color: var(--rng-gray-700);
+  line-height: 1.7;
+  padding: 12px 16px;
+  background: var(--rng-gray-100);
+  border-radius: 10px;
+  border-left: 3px solid var(--rng-red);
+}
+.copy-text.out {
+  border-left-color: var(--rng-gray-300);
+}
+
+.visual-reference {
+  margin-top: 16px;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #f8f7f6 0%, #edecea 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.visual-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.visual-desc {
+  font-size: 12px;
+  color: var(--rng-gray-700);
+  line-height: 1.6;
+}
+.visual-desc strong {
+  color: var(--rng-black);
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--rng-gray-200);
+}
+.post-platform {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: var(--rng-black);
+  color: var(--rng-white);
+}
+
+/* HASHTAG BANK */
+.hashtag-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 60px;
+  border-top: 1px solid var(--rng-gray-200);
+}
+.hashtag-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.hashtag-card {
+  background: var(--rng-white);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid var(--rng-gray-200);
+}
+.hashtag-card h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--rng-black);
+  margin-bottom: 12px;
+}
+.hashtag-card p {
+  font-size: 13px;
+  color: var(--rng-gray-500);
+  line-height: 1.8;
+  word-break: break-all;
+}
+
+/* NOTES */
+.notes-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px 80px;
+}
+.notes-card {
+  background: var(--rng-black);
+  color: var(--rng-white);
+  border-radius: 20px;
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+}
+.notes-card::before {
+  content: '';
+  position: absolute;
+  top: -50px; right: -50px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(139,26,26,0.25) 0%, transparent 70%);
+}
+.notes-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
+}
+.notes-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  position: relative;
+}
+.notes-list li {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--rng-gray-300);
+  padding-left: 20px;
+  position: relative;
+}
+.notes-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--rng-red-accent);
+}
+
+@media (max-width: 900px) {
+  .hero { padding: 48px 28px 36px; }
+  .hero h1 { font-size: 32px; }
+  .strategy-grid { grid-template-columns: 1fr; }
+  .posts-grid { grid-template-columns: 1fr; }
+  .week-section, .strategy-section, .hashtag-section, .notes-section { padding-left: 28px; padding-right: 28px; }
+  .hashtag-grid { grid-template-columns: 1fr; }
+  .notes-list { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Estrategia de Contenido</div>
+  <h1>Plan Pre-Apertura<br><span>Roll N' Go</span></h1>
+  <p class="hero-sub">Parrilla de contenido para Instagram y TikTok. 6 semanas de build-up estrategico hacia la apertura en Polanco.</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Periodo</span>
+      <span class="hero-meta-value">6 semanas pre-apertura</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Frecuencia</span>
+      <span class="hero-meta-value">4 posts / semana</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Total de piezas</span>
+      <span class="hero-meta-value">24 publicaciones</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Plataformas</span>
+      <span class="hero-meta-value">Instagram + TikTok</span>
+    </div>
+  </div>
+</div>
+
+<!-- STRATEGY -->
+<div class="strategy-section">
+  <div class="section-label">Estrategia</div>
+  <div class="section-title">Tres fases hacia la apertura</div>
+  <div class="strategy-grid">
+    <div class="strategy-card">
+      <div class="strategy-card-phase">Fase 1</div>
+      <h3>Misterio</h3>
+      <div class="strategy-card-dates">Semanas 1–2</div>
+      <p>Generar curiosidad sin revelar el producto completo. Fragmentos visuales, preguntas abiertas, y pistas sobre algo nuevo que llega a Polanco. El objetivo es que la gente pregunte "que es esto?"</p>
+    </div>
+    <div class="strategy-card">
+      <div class="strategy-card-phase">Fase 2</div>
+      <h3>Revelacion</h3>
+      <div class="strategy-card-dates">Semanas 3–4</div>
+      <p>Mostrar el producto, el formato, y el concepto. Aqui entra el "push pop sushi" como protagonista. Contenido educativo sobre como funciona, el empaque, y por que es diferente. Primeros acercamientos con influencers.</p>
+    </div>
+    <div class="strategy-card">
+      <div class="strategy-card-phase">Fase 3</div>
+      <h3>Anticipacion</h3>
+      <div class="strategy-card-dates">Semanas 5–6</div>
+      <p>Countdown hacia la apertura. Behind the scenes del local, teasers del menu, y contenido de influencers generando hype. La meta es que el dia de apertura ya haya una fila.</p>
+    </div>
+  </div>
+
+  <div class="section-label">Pilares de contenido</div>
+  <div style="margin-bottom:16px;">
+    <span class="pillar-tag pillar-misterio">Misterio / Teaser</span>
+    <span class="pillar-tag pillar-producto">Producto / Formato</span>
+    <span class="pillar-tag pillar-marca">Marca / Identidad</span>
+    <span class="pillar-tag pillar-comunidad">Comunidad / UGC</span>
+    <span class="pillar-tag pillar-educacion">Educacion / Cultura</span>
+  </div>
+</div>
+
+<!-- ===================== SEMANA 1 ===================== -->
+<div class="week-section">
+  <div class="week-header">
+    <div class="week-number">01</div>
+    <div class="week-info">
+      <div class="week-title">Algo se mueve en Polanco</div>
+      <div class="week-dates">Fase Misterio</div>
+    </div>
+  </div>
+  <div class="posts-grid">
+
+    <!-- Post 1.1 -->
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-date">Post 1</div>
+        <div class="post-format reel">Reel / TikTok</div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-objective">Generar curiosidad</div>
+        <div class="post-concept">El primer movimiento</div>
+        <div class="copy-block">
+          <div class="copy-label">Copy In (en pantalla)</div>
+          <div class="copy-text">Texto animado sobre fondo negro: "Algo esta por llegar..." seguido del logo Roll N' Go apareciendo con un glitch sutil. Sin mas contexto.</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-label">Copy Out (caption)</div>
+          <div class="copy-text out">Polanco, preparate. Algo nuevo se mueve por tus calles.<br><br>#RollNGo #MadeToMove #Polanco #ProntoEnCDMX</div>
+        </div>
+        <div class="visual-reference">
+          <div class="visual-desc"><strong>Visual:</strong> Video de 8–10 seg. Tomas rapidas y oscuras de calles de Polanco de noche. Luces de neon reflejadas en pavimento mojado. Al final, el logo aparece en blanco sobre negro con el sonido de un golpe seco. Estetica cinematografica, no foodie.</div>
+        </div>
+        <div class="post-tags">
+          <span class="pillar-tag pillar-misterio">Misterio</span>
+          <span class="post-platform">IG Reels</span>
+          <span class="post-platform">TikTok</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post 1.2 -->
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-date">Post 2</div>
+        <div class="post-format estatica">Imagen estatica</div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-objective">Anclar identidad visual</div>
+        <div class="post-concept">La textura como pista</div>
+        <div class="copy-block">
+          <div class="copy-label">Copy In (en pantalla)</div>
+          <div class="copy-text">Sin texto. Solo el pattern de olas japones de la marca en close-up, con una esquina del logo asomandose.</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-label">Copy Out (caption)</div>
+          <div class="copy-text out">No es lo que piensas. Es mejor.<br><br>#RollNGo #ComingSoon #SushiCDMX</div>
+        </div>
+        <div class="visual-reference">
+          <div class="visual-desc"><strong>Visual:</strong> Macro shot del pattern de olas rojo oscuro (el mismo de la identidad de marca). Crop muy cerrado, casi abstracto. Iluminacion lateral que resalte la textura. Se puede imprimir el pattern y fotografiarlo con luz natural para darle profundidad real.</div>
+        </div>
+        <div class="post-tags">
+          <span class="pillar-tag pillar-marca">Marca</span>
+          <span class="post-platform">IG Feed</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post 1.3 -->
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-date">Post 3</div>
+        <div class="post-format reel">Reel / TikTok</div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-objective">Provocar interaccion</div>
+        <div class="post-concept">El enigma del tubo</div>
+        <div class="copy-block">
+          <div class="copy-label">Copy In (en pantalla)</div>
+          <div class="copy-text">Una mano sostiene algo envuelto en papel oscuro con el pattern de Roll N' Go. No se ve que es. Texto: "Que crees que hay adentro?"</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-label">Copy Out (caption)</div>
+          <div class="copy-text out">Deja tu respuesta. Los que adivinen van a querer estar ahi el dia 1.<br><br>#RollNGo #MadeToMove #AdivinaQue</div>
+        </div>
+        <div class="visual-reference">
+          <div class="visual-desc"><strong>Visual:</strong> Plano cerrado de manos sosteniendo el tubo de carton brandeado, pero cubierto parcialmente. Movimiento lento, rotando el objeto. Fondo desenfocado. El tubo nunca se abre. Audio: sonido ASMR de carton, beat lo-fi suave. Duracion 12–15 seg.</div>
+        </div>
+        <div class="post-tags">
+          <span class="pillar-tag pillar-misterio">Misterio</span>
+          <span class="post-platform">IG Reels</span>
+          <span class="post-platform">TikTok</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post 1.4 -->
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-date">Post 4</div>
+        <div class="post-format story">Story serie</div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-objective">Engagement directo</div>
+        <div class="post-concept">Encuesta: como comes sushi?</div>
+        <div class="copy-block">
+          <div class="copy-label">Copy In (en pantalla)</div>
+          <div class="copy-text">Serie de 3 stories. 1) "Pregunta seria:" 2) "Como comes sushi cuando vas con prisa?" con poll: Charola de plastico / No como sushi de prisa / Necesito mesa. 3) "Y si te dijera que hay otra forma?" con el logo.</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-label">Copy Out (caption)</div>
+          <div class="copy-text out">N/A — formato story, sin caption.</div>
+        </div>
+        <div class="visual-reference">
+          <div class="visual-desc"><strong>Visual:</strong> Fondo negro con tipografia bold blanca, estilo editorial minimalista. Cada story usa el mismo look limpio. La tercera story agrega un toque de rojo con el logo. Usar stickers nativos de IG para las encuestas.</div>
+        </div>
+        <div class="post-tags">
+          <span class="pillar-tag pillar-comunidad">Comunidad</span>
+          <span class="post-platform">IG Stories</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===================== SEMANA 2 ===================== -->
+<div class="week-section">
+  <div class="week-header">
+    <div class="week-number">02</div>
+    <div class="week-info">
+      <div class="week-title">Las pistas se acumulan</div>
+      <div class="week-dates">Fase Misterio</div>
+    </div>
+  </div>
+  <div class="posts-grid">
+
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-date">Post 1</div>
+        <div class="post-format reel">Reel / TikTok</div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-objective">Elevar curiosidad</div>
+        <div class="post-concept">Manos que preparan algo</div>
+        <div class="copy-block">
+          <div class="copy-label">Copy In (en pantalla)</div>
+          <div class="copy-text">Close-ups extremos de manos de chef: cortando, enrollando, con precision. Nunca se ve el producto completo. Texto al final: "Hecho a mano. Hecho para moverse."</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-label">Copy Out (caption)</div>
+          <div class="copy-text out">Cada pieza, cortada con intencion. Cada rollo, pensado para ti.<br><br>#RollNGo #MadeToMove #SushiEnMovimiento</div>
+        </div>
+        <div class="visual-reference">
+          <div class="visual-desc"><strong>Visual:</strong> Estetica de documental gastronomico. Tomas macro: filo del cuchillo contra salmon, arroz siendo extendido, nori siendo cortada. Luz calida lateral. No se ve la cara del chef, solo sus manos. Edicion con cortes limpios al ritmo de un beat.</div>
+        </div>
+        <div class="post-tags">
+          <span class="pillar-tag pillar-producto">Producto</span>
+          <span class="pillar-tag pillar-educacion">Educacion</span>
+          <span class="post-platform">IG Reels</span>
+          <span class="post-platform">TikTok</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-date">Post 2</div>
+        <div class="post-format estatica">Imagen estatica</div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-objective">Posicionamiento de marca</div>
+        <div class="post-concept">Manifiesto visual</div>
+        <div class="copy-block">
+          <div class="copy-label">Copy In (en pantalla)</div>
+          <div class="copy-text">Fondo rojo oscuro de la marca. Texto en blanco centrado: "No competimos con el sushi tradicional. No competimos con la comida rapida. Creamos nuestro propio espacio."</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-label">Copy Out (caption)</div>
+          <div class="copy-text out">Una nueva categoria. Pronto en Polanco.<br><br>#RollNGo #MadeToMove #NuevaCategoria</div>
+        </div>
+        <div class="visual-reference">
+          <div class="visual-desc"><strong>Visual:</strong> Usar directamente el diseño de la slide 8 de la presentacion de marca como base. Tipografia de la identidad. El fondo rojo con las flores organicas. Formato cuadrado para feed.</div>
+        </div>
+        <div class="post-tags">
+          <span class="pillar-tag pillar-marca">Marca</span>
+          <span class="post-platform">IG Feed</span>
+          <span class="post-platform">TikTok</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-date">Post 3</div>
+        <div class="post-format reel">Reel / TikTok</div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-objective">Generar FOMO</div>
+        <div class="post-concept">La tendencia que viene de NYC</div>
+        <div class="copy-block">
+          <div class="copy-label">Copy In (en pantalla)</div>
+          <div class="copy-text">Montaje rapido: clips de Suka Sushi en NYC (repostear o recrear estetica), filas, gente comiendo del tubo. Texto: "En Nueva York ya es un fenomeno. En Mexico, nosotros lo traemos primero."</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-label">Copy Out (caption)</div>
+          <div class="copy-text out">La tendencia que arraso Nueva York y ya llego a Paris y Toronto. Mexico es el siguiente. Y nosotros lo traemos a Polanco.<br><br>#RollNGo #PushPopSushi #SushiTrend #CDMX</div>
+        </div>
+        <div class="visual-reference">
+          <div class="visual-desc"><strong>Visual:</strong> Estilo noticiero/trend report. Clips de la tendencia en NYC (usar contenido publico o recrear con material propio). Transiciones rapidas. Al final, revelar el tubo de Roll N' Go con el branding. Usar trending audio de TikTok.</div>
+        </div>
+        <div class="post-tags">
+          <span class="pillar-tag pillar-educacion">Educacion</span>
+          <span class="pillar-tag pillar-producto">Producto</span>
+          <span class="post-platform">TikTok</span>
+          <span class="post-platform">IG Reels</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-date">Post 4</div>
+        <div class="post-format story">Story serie</div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-objective">Behind the scenes</div>
+        <div class="post-concept">El local en construccion</div>
+        <div class="copy-block">
+          <div class="copy-label">Copy In (en pantalla)</div>
+          <div class="copy-text">4-5 stories documentando el avance del local. "Les ensenamos donde va a pasar todo..." Fotos/video del espacio en obra, detalles de diseno, materiales. Cerrar con "Falta poco."</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-label">Copy Out (caption)</div>
+          <div class="copy-text out">N/A — formato story.</div>
+        </div>
+        <div class="visual-reference">
+          <div class="visual-desc"><strong>Visual:</strong> Contenido organico, filmado con celular pero con buena luz. Mostrar el espacio crudo: paredes, pisos, planos. Agregar texto con la tipografia de la marca para mantener coherencia. Vibe de "los estas viendo antes que nadie".</div>
+        </div>
+        <div class="post-tags">
+          <span class="pillar-tag pillar-comunidad">Comunidad</span>
+          <span class="pillar-tag pillar-marca">Marca</span>
+          <span class="post-platform">IG Stories</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===================== SEMANA 3 ===================== -->
+<div class="week-section">
+  <div class="week-header">
+    <div class="week-number">03</div>
+    <div class="week-info">
+      <div class="week-title">Se revela el formato</div>
+      <div class="week-dates">Fase Revelacion</div>
+    </div>
+  </div>
+  <div class="posts-grid">
+
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-date">Post 1</div>
+        <div class="post-format reel">Reel / TikTok</div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-objective">REVEAL del producto</div>
+        <div class="post-concept">El gran push: primera vez que se ve el sushi salir del tubo</div>
+        <div class="copy-block">
+          <div class="copy-label">Copy In (en pantalla)</div>
+          <div class="copy-text">Slow motion del sushi siendo empujado hacia arriba desde el tubo de carton. La camara esta fija, el sushi sube. Texto: "Asi se come sushi en movimiento."</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-label">Copy Out (caption)</div>
+          <div class="copy-text out">Push. Bite. Go. Asi de simple.<br><br>Roll N' Go. La primera marca de push pop sushi en Mexico. Pronto en Polanco.<br><br>#RollNGo #MadeToMove #PushPopSushi #SushiCDMX #Polanco</div>
+        </div>
+        <div class="visual-reference">
+          <div class="visual-desc"><strong>Visual:</strong> ESTE ES EL POST MAS IMPORTANTE. Produccion alta. Slow motion 120fps o mas. Fondo limpio (negro o marmol oscuro). Iluminacion de estudio. El momento del push tiene que verse satisfactorio, casi ASMR. Angulo ligeramente bajo para darle grandeza al producto. 15-20 seg.</div>
+        </div>
+        <div class="post-tags">
+          <span class="pillar-tag pillar-producto">Producto</span>
+          <span class="post-platform">IG Reels</span>
+          <span class="post-platform">TikTok</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-date">Post 2</div>
+        <div class="post-format carrusel">Carrusel</div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-objective">Educacion de producto</div>
+        <div class="post-concept">Como funciona Roll N' Go en 5 pasos</div>
+        <div class="copy-block">
+          <div class="copy-label">Copy In (en pantalla)</div>
+          <div class="copy-text">Carrusel de 5 slides: 1) "Como funciona?" 2) "Abre la tapa" 3) "Inserta el tubo de salsa por abajo" 4) "Empuja, muerde, repite" 5) "Listo. Sin charola, sin palillos, sin mesa." + logo</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-label">Copy Out (caption)</div>
+          <div class="copy-text out">Sushi que se adapta a tu ritmo, no al reves. Sin charola. Sin palillos. Sin necesidad de sentarte.<br><br>Roll N' Go. Pronto en Polanco.<br><br>#RollNGo #MadeToMove #PushPopSushi #ComoFunciona</div>
+        </div>
+        <div class="visual-reference">
+          <div class="visual-desc"><strong>Visual:</strong> Fotos de producto reales, fondo negro consistente. Cada slide muestra el paso con la pieza en accion. Tipografia de la marca en blanco. Estetica limpia, tipo manual de producto premium. Las fotos deben mostrar manos reales interactuando con el tubo.</div>
+        </div>
+        <div class="post-tags">
+          <span class="pillar-tag pillar-educacion">Educacion</span>
+          <span class="pillar-tag pillar-producto">Producto</span>
+          <span class="post-platform">IG Feed</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-date">Post 3</div>
+        <div class="post-format reel">Reel / TikTok</div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-objective">Viralidad / shareability</div>
+        <div class="post-concept">Reacciones reales: primera vez probando Roll N' Go</div>
+        <div class="copy-block">
+          <div class="copy-label">Copy In (en pantalla)</div>
+          <div class="copy-text">Grabar a 4-5 personas probando el producto por primera vez. Capturar la reaccion genuina cuando ven como funciona el push y cuando lo prueban. Texto: "Su primera vez con Roll N' Go"</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-label">Copy Out (caption)</div>
+          <div class="copy-text out">Esa cara cuando descubres que el sushi se puede comer asi. Pronto vas a poder probarlo tu.<br><br>#RollNGo #MadeToMove #Reacciones #PrimeraVez</div>
+        </div>
+        <div class="visual-reference">
+          <div class="visual-desc"><strong>Visual:</strong> Estilo UGC pero con buena calidad. Pueden ser amigos, familia, o gente del equipo. Lo importante es que las reacciones sean reales y no actuadas. Edicion dinamica con cortes rapidos entre reacciones. Audio trending o beat energetico. 20-30 seg.</div>
+        </div>
+        <div class="post-tags">
+          <span class="pillar-tag pillar-comunidad">Comunidad</span>
+          <span class="pillar-tag pillar-producto">Producto</span>
+          <span class="post-platform">TikTok</span>
+          <span class="post-platform">IG Reels</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-date">Post 4</div>
+        <div class="post-format estatica">Imagen estatica</div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-objective">Producto hero</div>
+        <div class="post-concept">Foto hero del tubo con sushi visible</div>
+        <div class="copy-block">
+          <div class="copy-label">Copy In (en pantalla)</div>
+          <div class="copy-text">Sin texto superpuesto. Dejar que la foto hable. El tubo de Roll N' Go abierto con el sushi asomandose, sobre superficie oscura.</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-label">Copy Out (caption)</div>
+          <div class="copy-text out">Sushi de verdad. Formato que no has visto. Roll N' Go llega a Polanco.<br><br>#RollNGo #MadeToMove #SushiPolanco</div>
+        </div>
+        <div class="visual-reference">
+          <div class="visual-desc"><strong>Visual:</strong> Foto de producto profesional. El tubo ligeramente inclinado con el sushi asomando por arriba. Fondo oscuro con el tubito de salsa de soya al lado. Iluminacion tipo editorial gastronomica. Esta imagen se convierte en la imagen ancla del perfil.</div>
+        </div>
+        <div class="post-tags">
+          <span class="pillar-tag pillar-producto">Producto</span>
+          <span class="post-platform">IG Feed</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===================== SEMANA 4 ===================== -->
+<div class="week-section">
+  <div class="week-header">
+    <div class="week-number">04</div>
+    <div class="week-info">
+      <div class="week-title">Influencers entran al juego</div>
+      <div class="week-dates">Fase Revelacion</div>
+    </div>
+  </div>
+  <div class="posts-grid">
+
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-date">Post 1</div>
+        <div class="post-format reel">Reel / TikTok</div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-objective">Credibilidad foodie</div>
+        <div class="post-concept">Influencer #1: unboxing del tubo</div>
+        <div class="copy-block">
+          <div class="copy-label">Copy In (en pantalla)</div>
+          <div class="copy-text">Enviar el producto a un food influencer de CDMX para que haga su propio unboxing/review. El contenido es de ellos, en su estilo. Roll N' Go reposta.</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-label">Copy Out (caption)</div>
+          <div class="copy-text out">[Nombre del influencer] ya lo probo. Tu turno se acerca.<br><br>Gracias @[handle] por la review.<br><br>#RollNGo #MadeToMove #FoodiesCDMX</div>
+        </div>
+        <div class="visual-reference">
+          <div class="visual-desc"><strong>Visual:</strong> Contenido del influencer, en su estilo natural. Enviar un kit con: 2 tubos de sushi, una nota impresa con el tagline "Made to Move", y un elemento sorpresa (una tarjeta para la inauguracion?). El kit en si debe ser fotogenico.</div>
+        </div>
+        <div class="post-tags">
+          <span class="pillar-tag pillar-comunidad">Comunidad</span>
+          <span class="post-platform">TikTok</span>
+          <span class="post-platform">IG Reels</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-date">Post 2</div>
+        <div class="post-format carrusel">Carrusel</div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-objective">Diferenciacion vs competencia</div>
+        <div class="post-concept">Roll N' Go vs. lo que conoces</div>
+        <div class="copy-block">
+          <div class="copy-label">Copy In (en pantalla)</div>
+          <div class="copy-text">Carrusel comparativo. Slide 1: "Sushi tradicional vs Roll N' Go". Slides 2-5: comparaciones visuales lado a lado: charola vs tubo, necesitas mesa vs lo comes caminando, 20 min de espera vs listo al momento, se desarma vs mantiene su forma.</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-label">Copy Out (caption)</div>
+          <div class="copy-text out">No estamos en contra del sushi tradicional. Lo amamos. Pero cuando la vida no te da tiempo de sentarte, necesitas otra opcion. Una que no sacrifique calidad.<br><br>#RollNGo #MadeToMove #NuevaForma</div>
+        </div>
+        <div class="visual-reference">
+          <div class="visual-desc"><strong>Visual:</strong> Split screen limpio. Lado izquierdo: fotos con tono apagado/gris (charola, palillos, mesa). Lado derecho: fotos vibrantes con la paleta de Roll N' Go (tubo en mano, caminando, comiendo). Contraste intencional sin atacar al sushi clasico.</div>
+        </div>
+        <div class="post-tags">
+          <span class="pillar-tag pillar-producto">Producto</span>
+          <span class="pillar-tag pillar-educacion">Educacion</span>
+          <span class="post-platform">IG Feed</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-date">Post 3</div>
+        <div class="post-format reel">Reel / TikTok</div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-objective">Lifestyle / aspiracional</div>
+        <div class="post-concept">Un dia con Roll N' Go</div>
+        <div class="copy-block">
+          <div class="copy-label">Copy In (en pantalla)</div>
+          <div class="copy-text">Day-in-the-life de alguien en CDMX: sale de casa, camina por Polanco, toma Roll N' Go, come mientras camina/trabaja/maneja. Texto: "Tu nuevo lunch break."</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-label">Copy Out (caption)</div>
+          <div class="copy-text out">Sushi que va a tu ritmo. No necesitas frenar para comer bien.<br><br>#RollNGo #MadeToMove #LunchBreak #PolancoLife</div>
+        </div>
+        <div class="visual-reference">
+          <div class="visual-desc"><strong>Visual:</strong> Estetica lifestyle editorial. Protagonista joven profesional (25-35). Tomas en locaciones reales de Polanco: banquetas, parque Lincoln, oficinas. El tubo de Roll N' Go como accesorio natural. Color grading calido. Trending audio. 20-25 seg.</div>
+        </div>
+        <div class="post-tags">
+          <span class="pillar-tag pillar-marca">Marca</span>
+          <span class="pillar-tag pillar-producto">Producto</span>
+          <span class="post-platform">TikTok</span>
+          <span class="post-platform">IG Reels</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-date">Post 4</div>
+        <div class="post-format story">Story serie</div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-objective">Engagement + data collection</div>
+        <div class="post-concept">Que sabor quieres probar primero?</div>
+        <div class="copy-block">
+          <div class="copy-label">Copy In (en pantalla)</div>
+          <div class="copy-text">Serie de stories con slider emoji y quiz: "Que prefieres? Salmon clasico vs. Roll con chipotle?" "Camarones o atun?" "Spicy o no spicy?" Cerrar con: "El menu se acerca..."</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-label">Copy Out (caption)</div>
+          <div class="copy-text out">N/A — formato story.</div>
+        </div>
+        <div class="visual-reference">
+          <div class="visual-desc"><strong>Visual:</strong> Fondo rojo oscuro de la marca. Tipografia blanca bold. Usar stickers interactivos de IG (slider, quiz, poll). Cada opcion acompanada de un emoji o una micro-foto del ingrediente. Sirve doble: engagement + insight real sobre preferencias.</div>
+        </div>
+        <div class="post-tags">
+          <span class="pillar-tag pillar-comunidad">Comunidad</span>
+          <span class="post-platform">IG Stories</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===================== SEMANA 5 ===================== -->
+<div class="week-section">
+  <div class="week-header">
+    <div class="week-number">05</div>
+    <div class="week-info">
+      <div class="week-title">Countdown activado</div>
+      <div class="week-dates">Fase Anticipacion</div>
+    </div>
+  </div>
+  <div class="posts-grid">
+
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-date">Post 1</div>
+        <div class="post-format reel">Reel / TikTok</div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-objective">Hype de apertura</div>
+        <div class="post-concept">Countdown: 2 semanas</div>
+        <div class="copy-block">
+          <div class="copy-label">Copy In (en pantalla)</div>
+          <div class="copy-text">Time-lapse del local en construccion: de espacio vacio a casi terminado. Texto: "2 semanas." El video termina con las luces del local encendiendose por primera vez.</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-label">Copy Out (caption)</div>
+          <div class="copy-text out">De un espacio vacio a donde va a cambiar como comes sushi. 2 semanas.<br><br>#RollNGo #MadeToMove #Countdown #PolancoSushi</div>
+        </div>
+        <div class="visual-reference">
+          <div class="visual-desc"><strong>Visual:</strong> Time-lapse real del progreso de obra. Si no tienen suficiente material filmado, hacer un montaje con fotos del proceso. El momento climax es cuando se encienden las luces o se coloca el letrero. Audio: build-up cinematografico. 15-20 seg.</div>
+        </div>
+        <div class="post-tags">
+          <span class="pillar-tag pillar-marca">Marca</span>
+          <span class="post-platform">IG Reels</span>
+          <span class="post-platform">TikTok</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-date">Post 2</div>
+        <div class="post-format carrusel">Carrusel</div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-objective">Revelar menu</div>
+        <div class="post-concept">Preview del menu</div>
+        <div class="copy-block">
+          <div class="copy-label">Copy In (en pantalla)</div>
+          <div class="copy-text">Carrusel de 6-8 slides, cada una con un sabor del menu. Nombre del roll, ingredientes principales, y una foto/render del tubo con codigo de color o etiqueta diferente por variedad.</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-label">Copy Out (caption)</div>
+          <div class="copy-text out">El menu. Cada rollo pensado para que lo comas sin parar. Cual vas a pedir primero? Dejalo en los comentarios.<br><br>#RollNGo #MadeToMove #Menu #SushiPolanco</div>
+        </div>
+        <div class="visual-reference">
+          <div class="visual-desc"><strong>Visual:</strong> Slides con fondo negro, cada sabor con su foto de producto. Tipografia de la marca. Mantener formato consistente: nombre arriba, foto centro, ingredientes abajo. Ultima slide con todos los tubos juntos como "lineup".</div>
+        </div>
+        <div class="post-tags">
+          <span class="pillar-tag pillar-producto">Producto</span>
+          <span class="post-platform">IG Feed</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-date">Post 3</div>
+        <div class="post-format reel">Reel / TikTok</div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-objective">Credibilidad + alcance</div>
+        <div class="post-concept">Influencer #2: visita al local</div>
+        <div class="copy-block">
+          <div class="copy-label">Copy In (en pantalla)</div>
+          <div class="copy-text">Un segundo influencer (idealmente mas grande que el primero) visita el local casi terminado. Lo graban probando el producto en el espacio. Su reaccion genuina al lugar y al sushi.</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-label">Copy Out (caption)</div>
+          <div class="copy-text out">@[handle] ya conocio Roll N' Go por dentro. La proxima semana te toca a ti.<br><br>#RollNGo #MadeToMove #SneakPeek</div>
+        </div>
+        <div class="visual-reference">
+          <div class="visual-desc"><strong>Visual:</strong> Contenido del influencer en su estilo. El local semi-terminado agrega un elemento de exclusividad ("estoy viendo esto antes que todos"). Idealmente filmar tambien una version para el canal de Roll N' Go con angulos propios.</div>
+        </div>
+        <div class="post-tags">
+          <span class="pillar-tag pillar-comunidad">Comunidad</span>
+          <span class="post-platform">TikTok</span>
+          <span class="post-platform">IG Reels</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-date">Post 4</div>
+        <div class="post-format reel">Reel / TikTok</div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-objective">Viralidad / tendencia</div>
+        <div class="post-concept">ASMR del producto</div>
+        <div class="copy-block">
+          <div class="copy-label">Copy In (en pantalla)</div>
+          <div class="copy-text">Sin texto. Puro sonido: el carton deslizandose, el sushi siendo empujado, la mordida, la salsa de soya cayendo. Todo en extreme close-up.</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-label">Copy Out (caption)</div>
+          <div class="copy-text out">Sube el volumen.<br><br>#RollNGo #MadeToMove #ASMR #SushiASMR #FoodASMR</div>
+        </div>
+        <div class="visual-reference">
+          <div class="visual-desc"><strong>Visual:</strong> ASMR puro. Macro lens obligatorio. Cada sonido amplificado: el pop de la tapa, el desliz del carton, el crunch del nori, la salsa fluyendo del tubito. Fondo negro. Sin musica. Este tipo de contenido explota en TikTok. 20-30 seg.</div>
+        </div>
+        <div class="post-tags">
+          <span class="pillar-tag pillar-producto">Producto</span>
+          <span class="post-platform">TikTok</span>
+          <span class="post-platform">IG Reels</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===================== SEMANA 6 ===================== -->
+<div class="week-section">
+  <div class="week-header">
+    <div class="week-number">06</div>
+    <div class="week-info">
+      <div class="week-title">La semana de la apertura</div>
+      <div class="week-dates">Fase Anticipacion / Apertura</div>
+    </div>
+  </div>
+  <div class="posts-grid">
+
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-date">Post 1</div>
+        <div class="post-format reel">Reel / TikTok</div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-objective">Urgencia maxima</div>
+        <div class="post-concept">Esta semana cambia todo</div>
+        <div class="copy-block">
+          <div class="copy-label">Copy In (en pantalla)</div>
+          <div class="copy-text">Montaje cinematografico: recap de todo lo que se ha mostrado, fragmentos rapidos de cada fase. El build-up termina con la fecha de apertura revelada en grande. "Dia de apertura. Polanco."</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-label">Copy Out (caption)</div>
+          <div class="copy-text out">Todo lo que hemos construido llega este sabado. Roll N' Go abre en Polanco. Dia de apertura. Los primeros 50 llevan sorpresa.<br><br>#RollNGo #MadeToMove #GrandOpening #AperturaPolanco</div>
+        </div>
+        <div class="visual-reference">
+          <div class="visual-desc"><strong>Visual:</strong> Edicion tipo trailer de pelicula. Cortes rapidos de todo el contenido previo (reutilizar lo mejor de las 5 semanas). Build-up musical. Al final: fecha en tipografia grande sobre fondo negro. Pin este post en el perfil.</div>
+        </div>
+        <div class="post-tags">
+          <span class="pillar-tag pillar-marca">Marca</span>
+          <span class="post-platform">IG Reels</span>
+          <span class="post-platform">TikTok</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-date">Post 2</div>
+        <div class="post-format reel">Reel / TikTok</div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-objective">Behind the scenes final</div>
+        <div class="post-concept">El equipo antes de abrir</div>
+        <div class="copy-block">
+          <div class="copy-label">Copy In (en pantalla)</div>
+          <div class="copy-text">El equipo de Roll N' Go preparandose: uniformes por primera vez, probando recetas, acomodando el espacio. Vibe de "estamos listos". Texto: "2 dias."</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-label">Copy Out (caption)</div>
+          <div class="copy-text out">Detras de cada rollo hay un equipo que lleva meses preparando este momento. 2 dias.<br><br>#RollNGo #MadeToMove #Equipo #BehindTheScenes</div>
+        </div>
+        <div class="visual-reference">
+          <div class="visual-desc"><strong>Visual:</strong> Contenido humano y calido. Mostrar caras, sonrisas, nervios. El equipo con la playera negra/roja de Roll N' Go. Tomas del local ya terminado pero vacio, listo para recibir gente. Musica emotiva pero no cursi. 20-25 seg.</div>
+        </div>
+        <div class="post-tags">
+          <span class="pillar-tag pillar-marca">Marca</span>
+          <span class="pillar-tag pillar-comunidad">Comunidad</span>
+          <span class="post-platform">IG Reels</span>
+          <span class="post-platform">TikTok</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-date">Post 3</div>
+        <div class="post-format estatica">Imagen estatica</div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-objective">Ultima pieza pre-apertura</div>
+        <div class="post-concept">Manana</div>
+        <div class="copy-block">
+          <div class="copy-label">Copy In (en pantalla)</div>
+          <div class="copy-text">Imagen limpia: el frente del local con las luces encendidas de noche. Una sola palabra en grande: "Manana."</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-label">Copy Out (caption)</div>
+          <div class="copy-text out">Manana. Polanco. Roll N' Go.<br><br>#RollNGo #MadeToMove #Manana #AperturaPolanco</div>
+        </div>
+        <div class="visual-reference">
+          <div class="visual-desc"><strong>Visual:</strong> Foto del local terminado de noche, luces encendidas, banqueta vacia. Una imagen que transmita "esta listo, solo faltas tu". Edicion minima, dejar que el espacio hable. La simplicidad del copy es intencional: a este punto la audiencia ya sabe que es Roll N' Go.</div>
+        </div>
+        <div class="post-tags">
+          <span class="pillar-tag pillar-marca">Marca</span>
+          <span class="post-platform">IG Feed</span>
+          <span class="post-platform">TikTok</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <div class="post-card-header">
+        <div class="post-date">Post 4</div>
+        <div class="post-format video">Video + Stories en vivo</div>
+      </div>
+      <div class="post-card-body">
+        <div class="post-objective">DIA DE APERTURA</div>
+        <div class="post-concept">Estamos abiertos</div>
+        <div class="copy-block">
+          <div class="copy-label">Copy In (en pantalla)</div>
+          <div class="copy-text">Cobertura en tiempo real del dia de apertura. Stories cada hora. Un reel de apertura tipo "ya estamos aqui" con la primera persona entrando, el primer rollo saliendo, la primera reaccion.</div>
+        </div>
+        <div class="copy-block">
+          <div class="copy-label">Copy Out (caption)</div>
+          <div class="copy-text out">Roll N' Go esta abierto. Polanco, te estamos esperando. Ven por tu primer push.<br><br>[Direccion completa + horario]<br><br>#RollNGo #MadeToMove #GrandOpening #YaAbrimos</div>
+        </div>
+        <div class="visual-reference">
+          <div class="visual-desc"><strong>Visual:</strong> Cobertura completa del dia. Tener a alguien dedicado exclusivamente a grabar todo el dia. Stories en vivo cada hora mostrando la fila (si la hay), el producto saliendo, reacciones de clientes reales. El reel principal se puede editar esa misma noche o al dia siguiente con lo mejor del dia.</div>
+        </div>
+        <div class="post-tags">
+          <span class="pillar-tag pillar-marca">Marca</span>
+          <span class="pillar-tag pillar-comunidad">Comunidad</span>
+          <span class="post-platform">IG Reels</span>
+          <span class="post-platform">IG Stories</span>
+          <span class="post-platform">TikTok</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- HASHTAG BANK -->
+<div class="hashtag-section">
+  <div class="section-label">Recursos</div>
+  <div class="section-title">Banco de hashtags</div>
+  <div class="hashtag-grid">
+    <div class="hashtag-card">
+      <h4>Marca (usar siempre)</h4>
+      <p>#RollNGo #MadeToMove #PushPopSushi #SushiEnMovimiento</p>
+    </div>
+    <div class="hashtag-card">
+      <h4>Locacion</h4>
+      <p>#Polanco #CDMX #SushiPolanco #PolancoFood #ComidaPolanco #RestaurantesPolanco #CDMX2026</p>
+    </div>
+    <div class="hashtag-card">
+      <h4>Categoria / Tendencia</h4>
+      <p>#SushiCDMX #SushiLovers #FoodTrend #StreetFood #SushiOnTheGo #FoodiesCDMX #NuevaCategoria #SushiTrend</p>
+    </div>
+  </div>
+</div>
+
+<!-- NOTES -->
+<div class="notes-section">
+  <div class="notes-card">
+    <h3>Notas operativas para el equipo</h3>
+    <ul class="notes-list">
+      <li>Las fechas son sugeridas. Si la fecha real de apertura cambia, recorrer todo el calendario proporcionalmente. Lo importante es mantener las 6 semanas de build-up.</li>
+      <li>Priorizar TikTok para contenido de video. Instagram como plataforma de imagen y carruseles. Publicar en ambas cuando el formato lo permita.</li>
+      <li>Para influencers: buscar foodies de CDMX con 10K-100K seguidores (micro/mid). Tasa de engagement importa mas que numero de followers. Priorizar creadores que hagan contenido de sushi, comida japonesa, o food trends.</li>
+      <li>El contenido ASMR y de reacciones tiene el mayor potencial viral en TikTok. Invertir mas tiempo de produccion en esos formatos.</li>
+      <li>Responder TODOS los comentarios durante las primeras 6 semanas. Cada comentario es una oportunidad de generar conversacion y visibilidad algoritmica.</li>
+      <li>Guardar metricas semanales: alcance, engagement rate, saves, shares, y followers ganados. Los shares y saves son las metricas mas importantes para el algoritmo.</li>
+      <li>Considerar una promo de apertura: "los primeros 50 clientes del sabado reciben un segundo roll gratis" genera urgencia y fila, que a su vez genera contenido organico.</li>
+      <li>El tubo brandeado ES el contenido. Cada persona que camine con uno por Polanco es publicidad gratuita. Priorizar que el branding del tubo sea impecable y fotogenico.</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
